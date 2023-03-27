@@ -21,10 +21,11 @@ public class DemoTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-notifications");
         options.addArguments("--disable-extensions");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("start-maximized");
-        driver = new ChromeDriver();
+
+        driver = new ChromeDriver(options);
     }
 
     @Test

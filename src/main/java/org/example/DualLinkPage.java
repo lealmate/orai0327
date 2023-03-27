@@ -12,10 +12,10 @@ public class DualLinkPage {
     }
 
     private final String URL = "https://demo.seleniumeasy.com/bootstrap-dual-list-box-demo.html";
-    private final By searchBox1 = By.xpath("/div[@class='dual-list list-left col-md-5']//input");
-    private final By selectButton1 = By.xpath("/div[@class='dual-list list-left col-md-5']//a");
-    private final By addItem = By.className("btn btn-default btn-sm move-right");
-    private String rightListItem = "//div[@class='dual-list list-right col-md-5']//input/following::li[text()='%s']";
+    private final By searchBox1 = By.xpath("//div[@class=\"dual-list list-left col-md-5\"]//input");
+    private final By selectButton1 = By.xpath("//div[@class='dual-list list-left col-md-5']//a");
+    private final By addItem = By.xpath("//button[@class=\"btn btn-default btn-sm move-right\"]");
+    private String rightListItem = "//div[@class='dual-list list-right col-md-5']//input/following::li[contains(text(),'%s')]";
 
     public void navigate(){
         driver.navigate().to(URL);
@@ -30,7 +30,7 @@ public class DualLinkPage {
     }
 
     public void clickSelectButton(){
-        driver.findElement(selectButton1);
+        driver.findElement(selectButton1).click();
     }
 
     public boolean findRightListItem(String word){
